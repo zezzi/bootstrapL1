@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+    <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        /* * {
+          border: 2px solid #7478;
+          padding: 15px; 
+          margin: 15px;
+        }
+        
+        body {
+            max-width: 600px;
+            font-family: sans-serif;
+            color: #333;
+        }    */
+    </style>
+    </head>
+    <body>
+    <title>My home page</title>
+  <head>
+    
+    <body>
+        <table id="table" style="border: 2px;">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td colspan="2">Larry the Bird</td>
+                <td>@twitter</td>
+              </tr>
+            </tbody>
+          </table>
+       
+    </body>
+    <script>
+        function change() {
+            var header = document.getElementsByTagName("H2").item(0);
+            header.firstChild.data = "A dynamic document";
+
+            var para = document.getElementsByTagName("P").item(0);
+            para.firstChild.data = "This is the first paragraph.";
+
+            var newText = document.createTextNode("This is the second paragraph.");
+            var newElement = document.createElement("P");
+            newElement.appendChild(newText);
+            para.parentNode.appendChild(newElement);
+        }
+
+        const table = document.getElementById("table");
+        const tableAttrs = table.attributes; // Node/Element interface
+        for (let i = 0; i < tableAttrs.length; i++) {
+            // HTMLTableElement interface: border attribute
+            if(tableAttrs[i].nodeName.toLowerCase() == "border")
+                table.border = "5";
+        }
+        // HTMLTableElement interface: summary attribute
+        table.summary = "note: increased border";   
+    </script>
+</html>

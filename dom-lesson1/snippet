@@ -1,0 +1,3 @@
+let colorBackground = 'rgb(23,45,87)';
+let parentNode = document.getElementsByTagName("body");
+parentNode[0].style.backgroundColor = color

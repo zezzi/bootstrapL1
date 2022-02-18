@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+    <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      
+    </style>
+    </head>
+    <body>
+    <title>My home page</title>
+  <head>
+    
+    <body>
+       
+        <div class="element-by-id">
+            <h2>Get Element By Id</h2>
+            <p id="search-id">Use document.getElementById("search-id") to try out getting the elements</p>
+        </div>
+        <div class="element-by-class">
+            <h2>Get Element By Class Name</h2>
+            <p id="search-class">Use document.getElementsByClassName("todo-item") to try out getting the elements by class</p>
+        </div>
+        <div class="element-by-tag">
+            <h2>Get Element By Tag Name</h2>
+            <p id="search-tagname">Use document.getElementsByTagName("p") to try out getting the elements by Tag</p>
+        </div>
+        <div class="element-by-query-selector">
+            <h2>Get First Element By Query Selector</h2>
+            <p>Use document.querySelector("h2") to try out getting the elements by an especific class, id or tag</p>
+            <p>Use document.querySelector(".todo-item") when is a class</p>
+            <p>Use document.querySelector("#element-by-query-selector") when is an ID</p>
+        </div>
+        <div id="element-by-query-selector">
+            <h2>Get All Elements By Query Selector All</h2>
+            <p>Use document.querySelectorAll("h2") to try out getting the elements by an especific class, id or tag</p>
+            <p>Use document.querySelectorAll(".todo-item") when is a class</p>
+            <p>Use document.querySelectorAll("#element-by-query-selector") when is an ID</p>
+        </div>
+        <ul>
+            <li class="todo-item">
+                Buy Ingredients
+            </li>
+            <li class="todo-item">
+                Do Miss in place
+            </li>
+            <li class="todo-item">
+                Prepare Food
+            </li>
+        </ul>
+       
+    </body>
+    <script>
+        function change() {
+            var header = document.getElementsByTagName("h2").item(0);
+            header.firstChild.data = "A dynamic document";
+
+            var para = document.getElementsByTagName("P").item(0);
+            para.firstChild.data = "This is the first paragraph.";
+
+            var newText = document.createTextNode("This is the second paragraph.");
+            var newElement = document.createElement("P");
+            newElement.style.backgroundColor = 'green' ; 
+            newElement.appendChild(newText);
+            para.parentNode.appendChild(newElement);
+        }
+
+        function traverseUsingArray() {
+            const paragraphs = document.querySelectorAll("p")
+            const array = Array.from(paragraphs)
+            array.forEach(el => { 
+                console.log("Paragraphs: " + el.textContent) 
+            })   
+        }
+
+        function traverseByCLass() {
+            const items = document.getElementsByClassName("todo-item")
+            for (var i = 0; i < items.length; i++) {
+                console.log(items[i].innerHTML);
+            }
+        }
+
+        var b = document.querySelector("button");
+
+        b.setAttribute("name", "helloButton");
+        b.setAttribute("disabled", "");
+
+
+        // const table = document.getElementById("table");
+        // const tableAttrs = table.attributes; // Node/Element interface
+        // for (let i = 0; i < tableAttrs.length; i++) {
+        //     // HTMLTableElement interface: border attribute
+        //     if(tableAttrs[i].nodeName.toLowerCase() == "border")
+        //         table.border = "5";
+        // }
+        // // HTMLTableElement interface: summary attribute
+        // table.summary = "note: increased border";   
+    </script>
+</html>
